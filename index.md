@@ -4,7 +4,6 @@
 
 layout: home
 ---
-# anonymous123-code
 I speak:
 - English
 - German
