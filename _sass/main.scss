@@ -1,0 +1,140 @@
+$background-color-dark: #111 !default;
+$text-color-dark: #bbb !default;
+$grey-color-light-dark: #444 !default;
+$grey-color-dark-dark: #ddd !default;
+
+
+:root {
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --table-text-color: lighten(#{$text-color}, 18%);
+  --grey-color-light: #{$grey-color-light};
+  --grey-color-dark: #{$grey-color-dark};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #{$background-color-dark};
+    --text-color: #{$text-color-dark};
+    --grey-color-light: #{$grey-color-light-dark};
+    --grey-color-dark: #{$grey-color-dark-dark};
+  }
+}
+
+.site-header {
+  border-top: 5px solid var(--grey-color-dark);
+  border-bottom: 1px solid var(--grey-color-light);
+}
+
+.site-title {
+  &,
+  &:visited {
+    color: var(--grey-color-dark);
+  }
+}
+
+.site-nav {
+  .page-link {
+    color: var(--text-color);
+  }
+
+  @include media-query($on-palm) {
+    background-color: var(--background-color);
+    border: 1px solid var(--grey-color-light);
+
+    .menu-icon {
+      > svg {
+        fill: var(--grey-color-dark);
+      }
+    }
+  }
+}
+
+.site-footer {
+  border-top: 1px solid var(--grey-color-light);
+} 
+
+.footer-col-wrapper {
+  color: $grey-color;
+} 
+
+.post-meta {
+  color: $grey-color;
+}
+
+/**
+ * Basic styling
+ */
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $grey-color;
+  border-left: 4px solid var(--gray-color-light);
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  border: 1px solid var(--grey-color-light);
+  background-color: #35353a;
+}
+
+
+/**
+ * Icons
+ */
+
+.svg-icon {
+    fill: #{$grey-color};
+}
+
+
+/**
+ * Tables
+ */
+table {
+  color: var(--table-text-color); 
+  border: 1px solid var(--grey-color-light);
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($grey-color-light, 6%);
+    }
+  }
+  th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    border: 1px solid var(--grey-color-light);
+  }
+}
