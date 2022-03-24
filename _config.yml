@@ -27,7 +27,8 @@ url: "https://anonymous123-code.github.io" # the base hostname & protocol for yo
 github_username: "anonymous123-code"
 
 collections:
- - projects
+  projects:
+    output: true
 
 
 # Build settings
