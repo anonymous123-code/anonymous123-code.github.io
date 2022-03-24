@@ -26,6 +26,19 @@ url: "https://anonymous123-code.github.io" # the base hostname & protocol for yo
 
 github_username: "anonymous123-code"
 
+menu:
+  - name: "Projects"
+    url: "/projects"
+    dropdown:
+      dynamic: projects
+  - name: "About"
+    url: "/about"
+# - name: "Test"
+#   url: "/about"
+#   dropdown:
+#     - name: "A name"
+#       url: "/url"
+
 collections:
   projects:
     output: true

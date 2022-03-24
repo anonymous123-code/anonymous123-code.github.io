@@ -1,0 +1,22 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  :first-child {
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width: available;
+    background-color: var(--grey-color-light);
+  }
+  &:hover {
+    .dropdown-content {
+      display: block;
+      *:hover {
+        background-color: rgba(211, 211, 211, 0.6);
+      }
+    }
+  }
+}
