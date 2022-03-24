@@ -19,18 +19,20 @@
           {%- for menu_name in menu -%}
             {%- assign my_menu = site.menu | where: "name", menu_name | first -%}
             {%- if my_menu.url -%}
-              {%- if my_menu.dropdown and my_menu.dropdown.length > 0 -%}
+              {%- if my_menu.dropdown -%}
                 <div class="dropdown">
                   <a class="page-link" href="{{ my_menu.url | relative_url }}">{{ menu_name | escape }}</a>
                   {%- if my_menu.dropdown.dynamic -%}
                     {%- assign links = site[my_menu.dropdown.dynamic] -%}
                     {%- assign links_mapped = links | map: "url" -%}
-                    {%- for url in links_mapped -%}
-                      {%- assign my_link = links | where: "url", link_mapped | first -%}
-                      {%- if my_link.title -%}
-                        <a class="page-link" href="{{ url | relative_url }}">{{ my_link.title | escape }}</a>
-                      {%- endif -%}
-                    {%- endfor -%}
+                    <div class="dropdown-content">
+                      {%- for url in links_mapped -%}
+                        {%- assign my_link = links | where: "url", link_mapped | first -%}
+                          {%- if my_link.title -%}
+                            <a class="page-link" href="{{ url | relative_url }}">{{ my_link.title | escape }}</a>
+                          {%- endif -%}
+                      {%- endfor -%}
+                    </div>
                   {%- endif -%}
                 </div>
               {%- else -%}
