@@ -8,3 +8,66 @@ languages: css html css
 <p>
     This is a small little username Generator I actively develop. My aim is to generate a new username with it because I'm too uncreative
 </p>
+<div>
+    <div>
+
+    </div>
+</div>
+
+<script>
+    class EditableList {
+        _list = [];
+        _root;
+        _olElement;
+        _createInput;
+        constructor(div) {
+            this._root = div;
+
+            this.updateElement();
+        }
+
+        get list() {
+            return this._list.filter(() => true);
+        }
+
+        set list(newList) {
+            this._list = newList;
+            this.updateElement();
+            return this._list;
+        }
+
+        updateElement() {
+            this._root.children.clear();
+            this._olElement = document.createElement("ol");
+            this._olElement.classList.add("listElement-list")
+
+            let createContainer = document.createElement("div");
+            createContainer.classList.add("listElement-create-container");
+            this._createInput = document.createElement("input");
+            createInput.setAttribute("type", "text");
+            createContainer.appendChild(createInput);
+            let createButton = document.createElement("button");
+            createButton.textContent = "+";
+            createButton.onclick = (el) => {
+                let liElement = document.createElement("li");
+                liElement.classList.add("listElement-list-element");
+                let spanElement = document.createElement("span");
+                spanElement.textContent = this._createInput.value;
+                liElement.appendChild(spanElement);
+                let removeButton = document.createElement("button");
+                removeButton.textContent = "x";
+                removeButton.onclick = (th, el) => {
+                    let index = Array.from(liElement.parentElement.children).indexOf(liElement);
+                    this._list.splice(index, 1);
+                    liElement.remove();
+                };
+                liElement.appendChild(removeButton);
+                this._olElement.appendChild(liElement);
+                this._list.push(this._createInput.value);
+            };
+            createContainer.appendChild(createButton);
+
+            this._root.appendChild(this._olElement, createContainer);
+        }
+    }
+</script>
