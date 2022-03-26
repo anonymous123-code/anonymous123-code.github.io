@@ -8,14 +8,20 @@
     display: none;
     position: absolute;
     z-index: 1;
-    min-width: available;
+    min-width: 160px;
     background-color: var(--grey-color-light);
   }
-  &:hover {
+  &:hover, &:focus-within {
     .dropdown-content {
       display: block;
+      line-height: initial;
+      * {
+	padding: 10px;
+	white-space: nowrap;
+	display: inline-block;
+      }
       *:hover {
-        background-color: rgba(211, 211, 211, 0.6);
+        background-color: rgba(211, 211, 211, 0.2);
       }
     }
   }
