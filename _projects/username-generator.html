@@ -33,14 +33,14 @@ languages: css html css
         set list(newList) {
             this._list = newList;
             this.updateElement();
-            return this._list;
+            return this.list;
         }
 
         updateElement() {
             this._root.textContent = "";
             this._olElement = document.createElement("ol");
             this._olElement.classList.add("listElement-list")
-	    for (let el of this._list) {
+	        for (let el of this._list) {
                 let liElement = document.createElement("li");
                 liElement.classList.add("listElement-list-element");
                 let spanElement = document.createElement("span");
@@ -65,14 +65,14 @@ languages: css html css
             createContainer.appendChild(this._createInput);
             let createButton = document.createElement("button");
             createButton.textContent = "+";
-            createButton.onclick = (el) => {
+            createButton.onclick = () => {
                 this._list.push(this._createInput.value);
                 this.updateElement();
             };
             createContainer.appendChild(createButton);
             
             this._root.appendChild(this._olElement);
-	    this._root.appendChild(createContainer);
+            this._root.appendChild(createContainer);
         }
     }
     let doc = document.getElementById("list1");
