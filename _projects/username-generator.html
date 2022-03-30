@@ -9,10 +9,10 @@ languages: css html css
     This is a small little username Generator I actively develop. My aim is to generate a new username with it because
     I'm too uncreative
 </p>
-<div>
+<div style="display:flex">
     <div class="wrap-collapsible">
         <input id="collapsible" class="toggle" type="checkbox">
-        <label for="collapsible" class="lbl-toggle">More Info</label>
+        <label for="collapsible" class="lbl-toggle">Show Vocals</label>
         <div class="collapsible-content">
             <div class="content-inner">
                 <div id="list1">
@@ -22,7 +22,7 @@ languages: css html css
     </div>
     <div class="wrap-collapsible">
         <input id="collapsible2" class="toggle" type="checkbox">
-        <label for="collapsible2" class="lbl-toggle">More Info</label>
+        <label for="collapsible2" class="lbl-toggle">Show Consonants</label>
         <div class="collapsible-content">
             <div class="content-inner">
                 <div id="list2">
@@ -151,13 +151,14 @@ languages: css html css
     }
 
     .wrap-collapsible {
-        margin: 1.2rem 0;
+        margin: 1.2rem;
+        flex-grow: 1;
     }
 
     .lbl-toggle {
         display: block;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-transform: uppercase;
         padding: 1rem;
         color: var(--text-color);
