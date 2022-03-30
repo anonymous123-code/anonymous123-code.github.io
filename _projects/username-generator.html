@@ -38,6 +38,7 @@ languages: css html css
 
         updateElement() {
             this._root.textContent = "";
+            this._root.classList.add("listElement");
             this._olElement = document.createElement("ol");
             this._olElement.classList.add("listElement-list")
 	        for (let el of this._list) {
@@ -82,10 +83,40 @@ languages: css html css
     .listElement-list-element button {
         float: right;
     }
+    .listElement-create-container button {
+        border-radius: 2px;
+    }
+    .listElement-create-container input {
+        background-color: var(--grey-color-light);
+        color: var(--text-color);
+        border: 0;
+    }
+    .listElement-list-element button, .listElement-create-container button {
+	margin: 2px 4px;
+	border: 0px;
+        position: relative;
+	color: var(--text-color);
+	background-color: var(--grey-color-light);
+    }
+    .listElement-list-element button:hover::before, .listElement-create-container button:hover::before  {
+        content: "";
+	background-color: var(--text-color);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.2;
+        position: absolute;
+    }
     .listElement-list-element span {
         margin-right: 5px;
     }
     .listElement-list {
+        width: max-content;
+	min-width: -moz-available;
+        min-width: -webkit-fill-available;
+    }
+    .listElement {
         width: max-content;
     }
 </style>
