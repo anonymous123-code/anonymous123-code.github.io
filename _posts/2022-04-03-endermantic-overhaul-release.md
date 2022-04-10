@@ -20,4 +20,4 @@ If you are invested in any kind of Minecraft dev, being it Plugins, Ressource Pa
 
 I also recommend joining the [Quilt](https://discord.quiltmc.org/) and [Modfest + BlanketCon Discord](https://discord.gg/gn543Ee) Server.
 
-[quilt-website]: https://github.com/jekyll
+[quilt-website]: https://quiltmc.org
