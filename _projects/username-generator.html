@@ -30,10 +30,12 @@ languages: css html css
             </div>
         </div>
     </div>
-    <button type="button" onclick="generate()">Generate...</button>
-    <label>
-        <input id="textDisplay" type="text" contenteditable="false"/>
-    </label>
+    <div>
+        <button type="button" onclick="generate()">Generate...</button>
+        <label>
+            <input id="textDisplay" type="text" contenteditable="false"/>
+        </label>
+    </div>
 </div>
 
 <script>
@@ -169,7 +171,7 @@ languages: css html css
         border: 0;
     }
 
-    .listElement-list-element button, .listElement-create-container button {
+    /*.listElement-list-element button, .listElement-create-container */button {
         margin: 2px 4px;
         border: 0;
         position: relative;
@@ -177,7 +179,7 @@ languages: css html css
         background-color: var(--grey-color-light);
     }
 
-    .listElement-list-element button:hover::before, .listElement-create-container button:hover::before {
+    /*.listElement-list-element button:hover::before, .listElement-create-container */button:hover::before {
         content: "";
         background-color: var(--text-color);
         top: 0;
