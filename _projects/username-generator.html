@@ -30,6 +30,10 @@ languages: css html css
             </div>
         </div>
     </div>
+    <button type="button" onclick="generate()">Generate...</button>
+    <label>
+        <input id="textDisplay" type="text" contenteditable="false"/>
+    </label>
 </div>
 
 <script>
@@ -109,7 +113,8 @@ languages: css html css
         "yi",
         "ie",
         "yie",
-        "au"
+        "au",
+        ""
     ]
     let list2 = new EditableList(document.getElementById("list2"));
     list2.list = [
@@ -139,6 +144,17 @@ languages: css html css
         "x",
         "z"
     ]
+    function generate() {
+        let str = "";
+        let list = [list1.list, list2.list];
+        let index = Math.round(Math.random());
+        for (let i = 0; i < Math.floor(Math.random() * 15); i++) {
+            str += list[index][Math.floor(Math.random() * list[index].length)];
+            index = 1 - index;
+            if(str.length>20) break;
+        }
+        document.getElementById("textDisplay").value = str;
+    }
 </script>
 <style>
     .listElement-list-element button {
