@@ -165,7 +165,7 @@ languages: css html css
         let list = [list1.list, list2.list];
         let index = Math.round(Math.random());
         let minCount = document.getElementById("minTokenCount").value;
-        let maxCount = document.getElementById("maxTokenCount").value
+        let maxCount = document.getElementById("maxTokenCount").value;
         for (let i = 0; i < Math.floor(Math.random() * (maxCount - minCount) + minCount); i++) {
             str += list[index][Math.floor(Math.random() * list[index].length)];
             index = 1 - index;
