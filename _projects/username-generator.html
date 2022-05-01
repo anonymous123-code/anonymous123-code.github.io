@@ -31,7 +31,22 @@ languages: css html css
         </div>
     </div>
 </div>
-
+<div class="wrap-collapsible">
+    <input id="collapsible3" class="toggle" type="checkbox">
+    <label for="collapsible3" class="lbl-toggle">Show Settings</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+             <label>
+                 Min token count:
+                 <input id="minTokenCount" type="number">
+             </label>
+            <label>
+                Max token count:
+                <input id="maxTokenCount" type="number">
+            </label>
+        </div>
+    </div>
+</div>
 <div>
     <button type="button" onclick="generate()" style="font-size: 1.2em">Generate...</button>
     <label>
@@ -149,10 +164,12 @@ languages: css html css
         let str = "";
         let list = [list1.list, list2.list];
         let index = Math.round(Math.random());
-        for (let i = 0; i < Math.floor(Math.random() * 15); i++) {
+        let minCount = document.getElementById("minTokenCount").value;
+        let maxCount = document.getElementById("maxTokenCount").value
+        for (let i = 0; i < Math.floor(Math.random() * (maxCount - minCount) + minCount); i++) {
             str += list[index][Math.floor(Math.random() * list[index].length)];
             index = 1 - index;
-            if(str.length>20) break;
+            if(str.length>maxCount) break;
         }
         document.getElementById("textDisplay").value = str;
     }
