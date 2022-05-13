@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h2>My Projects</h2>
+<ul>
+  {%- for project in site["projects"] -%}
+    <li>
+      <h3><a href="{{ post.url | relative_url }}">{{ project.title | escape }}</a></h3>
+      {%- if project.summary -%}
+        <div>{{ project.summary | escape }}</div>
+      {% endif %}
+    </li>
+  {%- endfor -%}
+</ul>
