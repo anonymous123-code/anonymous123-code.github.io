@@ -5,7 +5,7 @@ layout: default
 <ul>
   {%- for project in site["projects"] -%}
     <li>
-      <h3><a href="{{ post.url | relative_url }}">{{ project.title | escape }}</a></h3>
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
       {%- if project.summary -%}
         <div>{{ project.summary | escape }}</div>
       {% endif %}
