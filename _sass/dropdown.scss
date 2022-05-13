@@ -16,9 +16,11 @@
       display: block;
       line-height: initial;
       * {
-	padding: 10px;
-	white-space: nowrap;
-	display: inline-block;
+	    padding: 10px;
+        min-width: available;
+        min-width: -moz-available;
+	    white-space: nowrap;
+	    display: inline-block;
       }
       *:hover {
         background-color: rgba(211, 211, 211, 0.2);
